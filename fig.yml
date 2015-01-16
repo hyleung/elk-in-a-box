@@ -1,0 +1,15 @@
+logstash:
+    build: logstash
+    volumes:
+        - logs:/var/logs    
+    links: 
+        - elasticsearch
+elasticsearch:
+    build: elasticsearch
+    ports: 
+        - "9200:9200"
+        - "9300:9300"
+kibana:
+    build: kibana
+    ports:
+        - "8888:8888"
