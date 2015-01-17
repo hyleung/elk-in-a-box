@@ -1,7 +1,8 @@
 logstash:
     build: logstash
     volumes:
-        - logs:/var/logs    
+        - logs:/var/logs
+        - conf:/etc/conf  
     links: 
         - elasticsearch
 elasticsearch:
