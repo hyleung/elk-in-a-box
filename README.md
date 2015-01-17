@@ -1,3 +1,4 @@
+![logo](logo.png)
 #ELK-in-a-Box
 
 ##What is this?
@@ -7,7 +8,7 @@ Uses Docker and Fig to build and run a local ELK stack that can be used to aggre
 
 It is **not** intended to be, by any stretch of the imagination, used to monitor your logs in production.
 
-##Pre-requisites
+##Prereqs
 
 You'll need:
 
