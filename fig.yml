@@ -3,6 +3,7 @@ logstash:
     volumes:
         - logs:/var/logs
         - conf:/etc/conf  
+        - patterns:/etc/patterns  
     links: 
         - elasticsearch
 elasticsearch:

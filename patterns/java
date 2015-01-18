@@ -1,0 +1,2 @@
+#Java patterns for LogStash
+JAVA_MULTILINE_STACKTRACE (^.+Exception: .+)|(^\s+at .+)|(^\s+... \d+ more)|(^\s*Caused by:.+)|(^\s+...\s[\d]+[\s\w]+$)

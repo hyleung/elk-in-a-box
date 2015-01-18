@@ -1,0 +1,10 @@
+15.01.2015 17:00:48.266 *INFO* [pool-9-thread-1] com.day.cq.replication.Agent.publish_reverse << Content-Length: 32
+15.01.2015 17:00:48.266 *INFO* [pool-9-thread-1] com.day.cq.replication.Agent.publish_reverse << Server: Jetty(8.1.14.v20131031)
+15.01.2015 17:00:48.266 *INFO* [pool-9-thread-1] com.day.cq.replication.Agent.publish_reverse Message sent.
+15.01.2015 17:00:48.266 *INFO* [pool-9-thread-1] com.day.cq.replication.Agent.publish_reverse ------------------------------------------------
+15.01.2015 17:00:48.266 *INFO* [pool-9-thread-1] com.day.cq.replication.Agent.publish_reverse Reverse replication successful.
+15.01.2015 17:00:48.266 *INFO* [pool-9-thread-1] com.day.cq.replication.Agent.publish_reverse Fetched 0 contents from http://localhost:4503/bin/receive?sling:authRequestLogin=1 since null
+15.01.2015 17:00:54.175 *ERROR* [10.10.2.112 [1421370054166] POST /content/geometrixx-outdoors/en_US/user/register.html HTTP/1.1] org.apache.sling.servlets.get.impl.DefaultGetServlet No renderer for extension html, cannot render resource ResourceWrapper, type=foundation/components/account/actions/update, path=/content/geometrixx-outdoors/en_US/user/register/jcr:content/par/start, resource=[JcrNodeResource, type=foundation/components/form/start, superType=null, path=/content/geometrixx-outdoors/en_US/user/register/jcr:content/par/start]
+15.01.2015 17:00:54.205 *INFO* [10.10.2.112 [1421370054166] POST /content/geometrixx-outdoors/en_US/user/register.html HTTP/1.1] com.day.cq.security.impl.account.CqAccountManager New account created for user email1421370049199@test.com
+15.01.2015 17:00:54.207 *WARN* [10.10.2.112 [1421370054166] POST /content/geometrixx-outdoors/en_US/user/register.html HTTP/1.1] org.eclipse.jetty.http.HttpGenerator Ignoring extra content 
+
