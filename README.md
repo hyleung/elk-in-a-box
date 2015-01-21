@@ -43,7 +43,21 @@ ElasticSearch is exposed on ports 9200 and 9300. The Docker image is built with 
 
 You'll find the configuration file for Logstash in `conf`. By default, Fig will mount this directory into the Logstash container into `/etc/conf`. The provided `logstash.conf` will consume any log files in `/var/logs`, which Fig will mount the local `logs` directory into. 
 
-At the moment, the idea is that you'd symlink any logs or log directories into this folder and update your `logstash.conf` accordingly. 
+Initially, the idea was to symlink any logs or log directories into this folder, but this doesn't appear to work with Docker. At the moment, the (admittedly shitty) workaround is to [mount](http://superuser.com/questions/842642/how-to-make-a-symlinked-folder-appear-as-a-normal-folder) the directory instead of linking it. This works ok for Linux, but not for OSX.
+
+On Linux:
+
+To mount:
+
+    mount -o bind <source directory> <target directory>
+
+To unmount:
+
+    umount <target directory>
+
+Once this is done, update your `logstash.conf` accordingly so that you can grab the input from the logs and apply any filters, etc. 
+
+The other workaround is to update `fig.yml` and mount the paths that you're interested in - which, I suppose, isn't so bad (since you have to update `logstash.conf` anyway)…
 
 ##Kibana
 
