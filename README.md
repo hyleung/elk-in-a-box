@@ -6,6 +6,7 @@
 
 Uses Docker and Fig to build and run a local ELK stack that can be used to aggregate and process logs in your local development environment.
 
+
 It is **not** intended to be, by any stretch of the imagination, used to monitor your logs in production.
 
 ##Prereqs
@@ -67,4 +68,10 @@ Once the everything is up and running, you should be able to find [Kibana](http:
 
 - You'll probabably need to be running boot2docker 1.3 minimum - at least on OSX, since shared directories actually work the way you'd [expect them to work](https://blog.docker.com/2014/10/docker-1-3-signed-images-process-injection-security-options-mac-shared-directories/).    
 - Currently, Fig seems to have problems verifying the cert(?) - if you add an entry into your `/etc/hosts` file to add entry to resolve `boot2docker` to your boot2docker ip (i.e. `boot2docker ip`), it seems to make Fig happy
+
+##Note: re. Docker-Compose + Docker-Machine
+
+Fig is being replaced by [docker-compose](https://docs.docker.com/compose/#compose-documentation). For the most part, it works exactly as Fig does (just execute `docker-compose` wherever you'd execute `fig`). The `fig.yml` format is identical (tho' it will warn you about the file name when you run it).
+
+Re. [docker-machine](https://docs.docker.com/machine/), I assume this will eventually be replacing Boot2Docker. There is a [known issue](https://github.com/docker/machine/issues/641) with host volume mounts when using the VMWare driver, which looks a lot like the Boot2Docker issue described above. Obviously volume mounts aren't going to be "a thing" with cloud drivers.
 
