@@ -3,6 +3,6 @@ path:
   logs: /data/log
   plugins: /data/plugins
   work: /data/work
-
+cluster.name: logstash
 http.cors.allow-origin: "/.*/"
 http.cors.enabled: true
