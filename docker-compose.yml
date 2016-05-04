@@ -1,28 +1,39 @@
-logstashshipper:
-    build: logstash
-    volumes:
-        - logs:/var/logs
-        - conf/shipper:/etc/conf  
-        - patterns:/etc/patterns  
-    links: 
-        - redisbroker:redis
-redisbroker:
-    image: redis
-    ports:
-        - "6379:6379"
-logstashindexer:
-    build: logstash
-    volumes:
-        - conf/indexer:/etc/conf
-    links:
-        - redisbroker:redis
-        - elasticsearch
-elasticsearch:
-    build: elasticsearch
-    ports: 
-        - "9200:9200"
-        - "9300:9300"
-kibana:
-    build: kibana
-    ports:
-        - "8888:8888"
+version: '2'
+      
+services:
+    logstashshipper:
+        build: logstash
+        volumes:
+            - ./logs:/var/logs
+            - ./conf/shipper:/etc/conf  
+            - ./patterns:/etc/patterns  
+        networks:
+            - app_net        
+    redisbroker:
+        image: redis
+        ports:
+            - "6379:6379"
+        networks:
+            - app_net
+    logstashindexer:
+        build: logstash
+        volumes:
+            - ./conf/indexer:/etc/conf
+        networks:
+            - app_net   
+    elasticsearch:
+        build: elasticsearch
+        ports: 
+            - "9200:9200"
+            - "9300:9300"
+        networks:
+            - app_net
+    kibana:
+        build: kibana
+        ports:
+            - "8888:8888"
+        networks:
+            - app_net       
+networks:
+    app_net:
+        driver: bridge 
